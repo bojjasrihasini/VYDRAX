@@ -1,0 +1,6 @@
+{
+  "name": "VYTRIX Digital Risk Protection",
+  "description": "Enterprise digital risk protection platform for social media and mobile app impersonation monitoring, look-alike brand detection, risk scoring, and threat takedown management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

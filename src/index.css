@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+:root {
+  /* Premium Emerald Green & Charcoal Theme Tokens */
+  --color-primary: #059669; /* emerald-600 */
+  --color-primary-hover: #047857; /* emerald-700 */
+  --color-primary-light: #10b981; /* emerald-500 (mint highlight) */
+  --color-primary-subtle: #ecfdf5; /* emerald-50 */
+  --color-primary-border: #a7f3d0; /* emerald-200 */
+  
+  --color-charcoal: #0f1722; /* Charcoal Black base */
+  --color-charcoal-dark: #090e17; /* Deep Charcoal */
+  --color-charcoal-surface: #1a2332; /* Charcoal section/card background */
+  --color-charcoal-border: #334155; /* Slate-700 charcoal border */
+
+  --color-bg-base: #f8fafc; /* Slate-50 background */
+  --color-surface-white: #ffffff; /* Clean white card surface */
+  --color-text-main: #0f172a; /* Slate-900 high contrast text */
+  --color-text-body: #334155; /* Slate-700 body text */
+  --color-text-muted: #64748b; /* Slate-500 secondary text */
+  --color-border-subtle: #e2e8f0; /* Slate-200 card border */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--color-bg-base);
+    color: var(--color-text-main);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+}
+
+/* Custom sleek scrollbar for clean enterprise look */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Premium card hover and lift utilities */
+.card-hover {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+}
+
+.btn-hover {
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, background-color 0.15s ease-out;
+}
+.btn-hover:hover {
+  transform: translateY(-1.5px);
+}
+.btn-hover:active {
+  transform: translateY(0);
+}
+
+/* Professional smooth entrance animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseSubtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-up {
+  animation: slideUpFade 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 2.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
